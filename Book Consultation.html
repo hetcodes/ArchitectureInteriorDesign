@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Consultation | Luxe Interior Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f8f5f0;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:65vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      animation:fadeUp 1.2s ease;
+    }
+
+    .hero h1{
+      font-size:70px;
+      color:white;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      color:#ddd;
+      font-size:20px;
+      max-width:750px;
+      line-height:1.8;
+      margin:auto;
+    }
+
+    /* CONSULTATION */
+
+    .consultation{
+      padding:100px 10%;
+      display:flex;
+      gap:60px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* LEFT */
+
+    .consultation-info{
+      flex:1;
+      min-width:320px;
+      animation:slideLeft 1.2s ease;
+    }
+
+    .consultation-info h2{
+      font-size:52px;
+      margin-bottom:25px;
+    }
+
+    .consultation-info p{
+      color:#666;
+      line-height:1.9;
+      margin-bottom:35px;
+      font-size:17px;
+    }
+
+    .feature-box{
+      background:white;
+      padding:25px;
+      border-radius:22px;
+      margin-bottom:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+      transition:0.4s;
+    }
+
+    .feature-box:hover{
+      transform:translateY(-8px);
+    }
+
+    .feature-box h3{
+      color:#c8a97e;
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .feature-box span{
+      color:#555;
+      line-height:1.8;
+      display:block;
+    }
+
+    /* FORM */
+
+    .consultation-form{
+      flex:1;
+      min-width:320px;
+      background:white;
+      padding:45px;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+      animation:slideRight 1.2s ease;
+    }
+
+    .consultation-form h2{
+      font-size:40px;
+      margin-bottom:30px;
+    }
+
+    .input-box{
+      margin-bottom:22px;
+    }
+
+    .input-box input,
+    .input-box select,
+    .input-box textarea{
+      width:100%;
+      padding:18px 20px;
+      border:none;
+      background:#f2f2f2;
+      border-radius:15px;
+      outline:none;
+      font-size:16px;
+      transition:0.4s;
+    }
+
+    .input-box input:focus,
+    .input-box select:focus,
+    .input-box textarea:focus{
+      background:#eaeaea;
+      transform:scale(1.01);
+    }
+
+    textarea{
+      height:140px;
+      resize:none;
+    }
+
+    .btn{
+      width:100%;
+      padding:17px;
+      border:none;
+      border-radius:50px;
+      background:black;
+      color:white;
+      font-size:17px;
+      cursor:pointer;
+      transition:0.4s;
+      font-weight:500;
+    }
+
+    .btn:hover{
+      background:#c8a97e;
+      color:black;
+      transform:translateY(-5px);
+    }
+
+    /* STEPS */
+
+    .steps{
+      padding:100px 10%;
+      background:white;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+      animation:fadeUp 1.2s ease;
+    }
+
+    .section-title h2{
+      font-size:52px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      font-size:18px;
+    }
+
+    .steps-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .step-card{
+      background:#f8f5f0;
+      padding:40px 30px;
+      border-radius:25px;
+      text-align:center;
+      transition:0.4s;
+      animation:fadeUp 1.5s ease;
+    }
+
+    .step-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .step-card h3{
+      font-size:55px;
+      color:#c8a97e;
+      margin-bottom:15px;
+    }
+
+    .step-card h4{
+      margin-bottom:15px;
+      font-size:25px;
+    }
+
+    .step-card p{
+      color:#666;
+      line-height:1.8;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:120px 10%;
+      background:
+      linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      text-align:center;
+    }
+
+    .cta h2{
+      color:white;
+      font-size:58px;
+      margin-bottom:20px;
+      animation:fadeUp 1s ease;
+    }
+
+    .cta p{
+      color:#ddd;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:40px;
+      font-size:18px;
+    }
+
+    .cta .btn2{
+      display:inline-block;
+      padding:16px 40px;
+      background:#c8a97e;
+      color:black;
+      border-radius:50px;
+      text-decoration:none;
+      transition:0.4s;
+      font-weight:600;
+    }
+
+    .cta .btn2:hover{
+      background:white;
+      transform:translateY(-5px);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      color:#aaa;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(60px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes slideLeft{
+      from{
+        opacity:0;
+        transform:translateX(-80px);
+      }
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    @keyframes slideRight{
+      from{
+        opacity:0;
+        transform:translateX(80px);
+      }
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .consultation-info h2,
+      .consultation-form h2,
+      .section-title h2,
+      .cta h2{
+        font-size:35px;
+      }
+
+      .consultation{
+        padding:70px 7%;
+      }
+
+      .consultation-form{
+        padding:35px 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Book Consultation</h1>
+
+      <p>
+        Schedule a premium interior design consultation with our creative experts
+        and transform your dream space into reality.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CONSULTATION -->
+
+  <section class="consultation">
+
+    <!-- LEFT -->
+
+    <div class="consultation-info">
+
+      <h2>Why Choose Us?</h2>
+
+      <p>
+        We specialize in modern luxury interiors crafted with creativity,
+        elegance, and timeless design concepts.
+      </p>
+
+      <div class="feature-box">
+        <h3>Luxury Design</h3>
+        <span>Elegant and modern interiors tailored to your personality.</span>
+      </div>
+
+      <div class="feature-box">
+        <h3>Expert Designers</h3>
+        <span>Professional team with years of premium interior experience.</span>
+      </div>
+
+      <div class="feature-box">
+        <h3>Custom Solutions</h3>
+        <span>Unique concepts designed specifically for your dream home.</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="consultation-form">
+
+      <h2>Book Appointment</h2>
+
+      <form>
+
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="input-box">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+
+        <div class="input-box">
+          <input type="tel" placeholder="Phone Number" required>
+        </div>
+
+        <div class="input-box">
+          <select required>
+            <option value="">Select Service</option>
+            <option>Living Room Design</option>
+            <option>Bedroom Interior</option>
+            <option>Office Design</option>
+            <option>Luxury Villa Interior</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <input type="date" required>
+        </div>
+
+        <div class="input-box">
+          <textarea placeholder="Tell us about your dream space"></textarea>
+        </div>
+
+           <a href="AppointmentSuccessPage.html" class="btn2">AppointmentSuccessPage</a>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- STEPS -->
+
+  <section class="steps">
+
+    <div class="section-title">
+
+      <h2>Our Process</h2>
+
+      <p>Simple steps to design your perfect interior.</p>
+
+    </div>
+
+    <div class="steps-grid">
+
+      <div class="step-card">
+        <h3>01</h3>
+        <h4>Consultation</h4>
+        <p>
+          Share your ideas and design preferences with our experts.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <h3>02</h3>
+        <h4>Planning</h4>
+        <p>
+          We create premium layouts and luxury interior concepts.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <h3>03</h3>
+        <h4>Execution</h4>
+        <p>
+          Transforming your vision into a beautiful living experience.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>Ready To Create Your Dream Interior?</h2>
+
+    <p>
+      Book your consultation today and let our creative designers
+      craft a luxurious and timeless space for you.
+    </p>
+
+    <a href="Contact.html" class="btn2">Get Started</a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Luxe Interior Studio. All Rights Reserved.
+  </footer>
+
+  <script>
+
+    // Scroll Animation
+
+    const cards = document.querySelectorAll('.feature-box, .step-card, .consultation-form');
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    cards.forEach(card=>{
+      card.style.opacity = "0";
+      card.style.transform = "translateY(50px)";
+      card.style.transition = "1s";
+      observer.observe(card);
+    });
+
+  </script>
+
+</body>
+</html>

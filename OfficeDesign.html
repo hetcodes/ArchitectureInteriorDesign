@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Office Design</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f8f5f0;
+      overflow-x:hidden;
+      color:#222;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      animation:fadeUp 1.2s ease;
+    }
+
+    .hero h1{
+      font-size:75px;
+      color:white;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      color:#ddd;
+      max-width:750px;
+      margin:auto;
+      line-height:1.8;
+      font-size:20px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      padding:100px 10%;
+      display:flex;
+      align-items:center;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .about-img{
+      flex:1;
+      min-width:320px;
+      animation:slideLeft 1.3s ease;
+    }
+
+    .about-img img{
+      width:100%;
+      border-radius:25px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+      transition:0.5s;
+    }
+
+    .about-img img:hover{
+      transform:scale(1.05);
+    }
+
+    .about-text{
+      flex:1;
+      min-width:320px;
+      animation:slideRight 1.3s ease;
+    }
+
+    .about-text h2{
+      font-size:50px;
+      margin-bottom:25px;
+    }
+
+    .about-text p{
+      color:#666;
+      line-height:1.9;
+      margin-bottom:20px;
+      font-size:17px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:black;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      background:#c8a97e;
+      transform:translateY(-5px);
+    }
+
+    /* SERVICES */
+
+    .services{
+      padding:100px 10%;
+      background:white;
+      text-align:center;
+    }
+
+    .section-title h2{
+      font-size:55px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      margin-bottom:60px;
+      font-size:18px;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:35px;
+    }
+
+    .service-card{
+      background:#f8f5f0;
+      padding:40px 30px;
+      border-radius:25px;
+      transition:0.5s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      animation:fadeUp 1.3s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-12px);
+    }
+
+    .service-card i{
+      font-size:55px;
+      color:#c8a97e;
+      margin-bottom:25px;
+    }
+
+    .service-card h3{
+      font-size:28px;
+      margin-bottom:15px;
+    }
+
+    .service-card p{
+      color:#666;
+      line-height:1.8;
+    }
+
+    /* WORKSPACE */
+
+    .workspace{
+      padding:100px 10%;
+    }
+
+    .workspace-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .workspace-item{
+      overflow:hidden;
+      border-radius:25px;
+      position:relative;
+      animation:fadeUp 1.5s ease;
+    }
+
+    .workspace-item img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      transition:0.6s;
+    }
+
+    .workspace-item:hover img{
+      transform:scale(1.1);
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.5);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      opacity:0;
+      transition:0.5s;
+    }
+
+    .workspace-item:hover .overlay{
+      opacity:1;
+    }
+
+    .overlay h3{
+      color:white;
+      font-size:28px;
+    }
+
+    /* STATS */
+
+    .stats{
+      background:#1f1f1f;
+      padding:100px 10%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:40px;
+      text-align:center;
+    }
+
+    .stat-box{
+      color:white;
+      animation:fadeUp 1.5s ease;
+    }
+
+    .stat-box h3{
+      font-size:60px;
+      color:#c8a97e;
+      margin-bottom:10px;
+    }
+
+    .stat-box p{
+      color:#bbb;
+      font-size:18px;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:120px 10%;
+      text-align:center;
+      background:
+      linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1497366412874-3415097a27e7?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .cta h2{
+      color:white;
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      color:#ddd;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:40px;
+      font-size:18px;
+    }
+
+    .cta .btn{
+      background:#c8a97e;
+      color:black;
+      font-weight:600;
+    }
+
+    .cta .btn:hover{
+      background:white;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      color:#aaa;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(60px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes slideLeft{
+      from{
+        opacity:0;
+        transform:translateX(-80px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    @keyframes slideRight{
+      from{
+        opacity:0;
+        transform:translateX(80px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .about-text h2,
+      .section-title h2,
+      .cta h2{
+        font-size:35px;
+      }
+
+      .cta h2{
+        line-height:1.4;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Office Design</h1>
+
+      <p>
+        Modern office interiors crafted for creativity, productivity,
+        innovation, and premium professional environments.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about">
+
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+    </div>
+
+    <div class="about-text">
+
+      <h2>Creative Workspaces</h2>
+
+      <p>
+        We design stylish office interiors that combine functionality,
+        comfort, and modern aesthetics for productive environments.
+      </p>
+
+      <p>
+        From corporate offices to creative studios and coworking spaces,
+        every detail is designed to inspire innovation and teamwork.
+      </p>
+
+      <a href="#" class="btn">Explore Offices</a>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services">
+
+    <div class="section-title">
+
+      <h2>Office Features</h2>
+
+      <p>
+        Premium office solutions designed for modern businesses.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <i class="fas fa-laptop-house"></i>
+        <h3>Smart Workspace</h3>
+        <p>
+          Modern office layouts designed for efficiency and productivity.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-users"></i>
+        <h3>Meeting Rooms</h3>
+        <p>
+          Elegant meeting spaces with creative and professional interiors.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Creative Design</h3>
+        <p>
+          Inspiring office interiors with modern lighting and décor.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WORKSPACE -->
+
+  <section class="workspace">
+
+    <div class="section-title">
+
+      <h2>Workspace Gallery</h2>
+
+      <p>
+        Explore premium office designs and modern work environments.
+      </p>
+
+    </div>
+
+    <div class="workspace-grid">
+
+      <div class="workspace-item">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+          <h3>Corporate Office</h3>
+        </div>
+      </div>
+
+      <div class="workspace-item">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+          <h3>Modern Workspace</h3>
+        </div>
+      </div>
+
+      <div class="workspace-item">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+          <h3>Creative Studio</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stat-box">
+      <h3>350+</h3>
+      <p>Office Projects</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>250+</h3>
+      <p>Business Clients</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>12+</h3>
+      <p>Years Experience</p>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>Create Your Dream Workspace</h2>
+
+    <p>
+      Stylish office interiors crafted for modern businesses,
+      creativity, productivity, and innovation.
+    </p>
+
+    <a href="Book Consultation.html" class="btn">Book Consultation</a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Luxe Interior Studio. All Rights Reserved.
+  </footer>
+
+  <script>
+
+    // SCROLL ANIMATION
+
+    const cards = document.querySelectorAll('.service-card, .workspace-item, .stat-box');
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    cards.forEach(card=>{
+      card.style.opacity = "0";
+      card.style.transform = "translateY(60px)";
+      card.style.transition = "1s";
+      observer.observe(card);
+    });
+
+  </script>
+
+</body>
+</html>

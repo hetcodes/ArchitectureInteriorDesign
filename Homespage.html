@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Homes</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f8f5f0;
+      overflow-x:hidden;
+      color:#222;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      animation:fadeUp 1.2s ease;
+    }
+
+    .hero h1{
+      font-size:75px;
+      color:white;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      color:#ddd;
+      max-width:750px;
+      margin:auto;
+      line-height:1.8;
+      font-size:20px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      padding:100px 10%;
+      display:flex;
+      align-items:center;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .about-img{
+      flex:1;
+      min-width:320px;
+      animation:slideLeft 1.3s ease;
+    }
+
+    .about-img img{
+      width:100%;
+      border-radius:25px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+      transition:0.5s;
+    }
+
+    .about-img img:hover{
+      transform:scale(1.05);
+    }
+
+    .about-text{
+      flex:1;
+      min-width:320px;
+      animation:slideRight 1.3s ease;
+    }
+
+    .about-text h2{
+      font-size:50px;
+      margin-bottom:25px;
+    }
+
+    .about-text p{
+      color:#666;
+      line-height:1.9;
+      margin-bottom:20px;
+      font-size:17px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:black;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      background:#c8a97e;
+      transform:translateY(-5px);
+    }
+
+    /* FEATURES */
+
+    .features{
+      padding:100px 10%;
+      background:white;
+      text-align:center;
+    }
+
+    .section-title h2{
+      font-size:55px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      margin-bottom:60px;
+      font-size:18px;
+    }
+
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:35px;
+    }
+
+    .feature-card{
+      background:#f8f5f0;
+      padding:40px 30px;
+      border-radius:25px;
+      transition:0.5s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      animation:fadeUp 1.3s ease;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-12px);
+    }
+
+    .feature-card i{
+      font-size:55px;
+      color:#c8a97e;
+      margin-bottom:25px;
+    }
+
+    .feature-card h3{
+      font-size:28px;
+      margin-bottom:15px;
+    }
+
+    .feature-card p{
+      color:#666;
+      line-height:1.8;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      padding:100px 10%;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .gallery-item{
+      overflow:hidden;
+      border-radius:25px;
+      position:relative;
+      animation:fadeUp 1.5s ease;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      transition:0.6s;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.1);
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.5);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      opacity:0;
+      transition:0.5s;
+    }
+
+    .gallery-item:hover .overlay{
+      opacity:1;
+    }
+
+    .overlay h3{
+      color:white;
+      font-size:28px;
+    }
+
+    /* STATS */
+
+    .stats{
+      background:#1f1f1f;
+      padding:100px 10%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:40px;
+      text-align:center;
+    }
+
+    .stat-box{
+      color:white;
+      animation:fadeUp 1.5s ease;
+    }
+
+    .stat-box h3{
+      font-size:60px;
+      color:#c8a97e;
+      margin-bottom:10px;
+    }
+
+    .stat-box p{
+      color:#bbb;
+      font-size:18px;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:120px 10%;
+      text-align:center;
+      background:
+      linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .cta h2{
+      color:white;
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      color:#ddd;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:40px;
+      font-size:18px;
+    }
+
+    .cta .btn{
+      background:#c8a97e;
+      color:black;
+      font-weight:600;
+    }
+
+    .cta .btn:hover{
+      background:white;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      color:#aaa;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(60px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes slideLeft{
+      from{
+        opacity:0;
+        transform:translateX(-80px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    @keyframes slideRight{
+      from{
+        opacity:0;
+        transform:translateX(80px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .about-text h2,
+      .section-title h2,
+      .cta h2{
+        font-size:35px;
+      }
+
+      .cta h2{
+        line-height:1.4;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>Luxury Homes</h1>
+
+      <p>
+        Experience timeless elegance and premium living spaces crafted
+        with luxury interiors, modern architecture, and creative excellence.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about">
+
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop">
+    </div>
+
+    <div class="about-text">
+
+      <h2>Elegant Luxury Living</h2>
+
+      <p>
+        Our luxury homes are designed with modern sophistication,
+        spacious layouts, and premium interior concepts.
+      </p>
+
+      <p>
+        From stylish living rooms to luxurious bedrooms and smart architecture,
+        every detail is crafted to create a perfect lifestyle experience.
+      </p>
+
+      <a href="#" class="btn">Explore Homes</a>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features">
+
+    <div class="section-title">
+
+      <h2>Luxury Features</h2>
+
+      <p>
+        Modern and premium features designed for comfort and elegance.
+      </p>
+
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <i class="fas fa-home"></i>
+        <h3>Modern Villas</h3>
+        <p>
+          Spacious luxury villas designed with premium aesthetics and comfort.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fas fa-swimming-pool"></i>
+        <h3>Private Pools</h3>
+        <p>
+          Elegant pool areas crafted for luxury and relaxation experiences.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fas fa-couch"></i>
+        <h3>Luxury Interiors</h3>
+        <p>
+          Beautifully designed interiors with modern furniture and décor.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section class="gallery">
+
+    <div class="section-title">
+
+      <h2>Luxury Gallery</h2>
+
+      <p>
+        Explore our premium luxury home projects and inspirations.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+          <h3>Luxury Villa</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+          <h3>Modern Living</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="overlay">
+          <h3>Premium Bedroom</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stat-box">
+      <h3>650+</h3>
+      <p>Luxury Projects</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>400+</h3>
+      <p>Happy Clients</p>
+    </div>
+
+    <div class="stat-box">
+      <h3>20+</h3>
+      <p>Years Experience</p>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>Create Your Luxury Dream Home</h2>
+
+    <p>
+      Beautiful luxury spaces crafted with creativity, comfort,
+      elegance, and timeless modern architecture.
+    </p>
+
+    <a href="Book Consultation.html" class="btn">Book Consultation</a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Luxe Interior Studio. All Rights Reserved.
+  </footer>
+
+  <script>
+
+    // SCROLL ANIMATION
+
+    const cards = document.querySelectorAll('.feature-card, .gallery-item, .stat-box');
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    cards.forEach(card=>{
+      card.style.opacity = "0";
+      card.style.transform = "translateY(60px)";
+      card.style.transition = "1s";
+      observer.observe(card);
+    });
+
+  </script>
+
+</body>
+</html>

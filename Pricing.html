@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interior Design Pricing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f7f4ef;
+      overflow-x:hidden;
+      color:#222;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:65vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      animation:fadeUp 1.2s ease;
+    }
+
+    .hero h1{
+      color:white;
+      font-size:70px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      color:#ddd;
+      font-size:20px;
+      max-width:700px;
+      margin:auto;
+      line-height:1.7;
+    }
+
+    /* PRICING */
+
+    .pricing{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+      animation:fadeUp 1.2s ease;
+    }
+
+    .section-title h2{
+      font-size:52px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#666;
+      font-size:18px;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .pricing-card{
+      background:white;
+      border-radius:30px;
+      padding:45px 35px;
+      text-align:center;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+      transition:0.5s;
+      position:relative;
+      overflow:hidden;
+      animation:fadeUp 1.4s ease;
+    }
+
+    .pricing-card:hover{
+      transform:translateY(-15px) scale(1.02);
+    }
+
+    .pricing-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:6px;
+      background:#c8a97e;
+    }
+
+    .popular{
+      background:#1f1f1f;
+      color:white;
+      transform:scale(1.05);
+    }
+
+    .popular p,
+    .popular li{
+      color:#ddd !important;
+    }
+
+    .tag{
+      position:absolute;
+      top:20px;
+      right:-40px;
+      background:#c8a97e;
+      color:black;
+      padding:10px 50px;
+      transform:rotate(45deg);
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .pricing-card h3{
+      font-size:32px;
+      margin-bottom:15px;
+    }
+
+    .price{
+      font-size:65px;
+      font-weight:700;
+      margin:20px 0;
+      color:#c8a97e;
+    }
+
+    .price span{
+      font-size:20px;
+      color:#888;
+    }
+
+    .pricing-card p{
+      color:#666;
+      margin-bottom:30px;
+      line-height:1.7;
+    }
+
+    .features{
+      list-style:none;
+      margin-bottom:35px;
+    }
+
+    .features li{
+      padding:12px 0;
+      border-bottom:1px solid rgba(0,0,0,0.08);
+      color:#555;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 40px;
+      border-radius:50px;
+      text-decoration:none;
+      background:black;
+      color:white;
+      transition:0.4s;
+      font-weight:500;
+    }
+
+    .btn:hover{
+      background:#c8a97e;
+      color:black;
+      transform:translateY(-5px);
+    }
+
+    .popular .btn{
+      background:#c8a97e;
+      color:black;
+    }
+
+    .popular .btn:hover{
+      background:white;
+    }
+
+    /* PROCESS */
+
+    .process{
+      padding:100px 10%;
+      background:white;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-top:60px;
+    }
+
+    .process-box{
+      background:#f7f4ef;
+      padding:40px 30px;
+      border-radius:25px;
+      text-align:center;
+      transition:0.5s;
+      animation:fadeUp 1.5s ease;
+    }
+
+    .process-box:hover{
+      transform:translateY(-10px);
+    }
+
+    .process-box h3{
+      font-size:28px;
+      color:#c8a97e;
+      margin-bottom:15px;
+    }
+
+    .process-box h4{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .process-box p{
+      color:#666;
+      line-height:1.8;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:120px 10%;
+      background:
+      linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      text-align:center;
+    }
+
+    .cta h2{
+      color:white;
+      font-size:58px;
+      margin-bottom:20px;
+      animation:fadeUp 1s ease;
+    }
+
+    .cta p{
+      color:#ddd;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:40px;
+      font-size:18px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      color:#aaa;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(60px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .section-title h2,
+      .cta h2{
+        font-size:36px;
+      }
+
+      .price{
+        font-size:50px;
+      }
+
+      .popular{
+        transform:scale(1);
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Pricing Plans</h1>
+      <p>
+        Premium interior design solutions tailored for modern homes,
+        luxury apartments, and commercial spaces.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+
+  <section class="pricing">
+
+    <div class="section-title">
+      <h2>Choose Your Package</h2>
+      <p>Luxury interior design plans crafted for every lifestyle.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- BASIC -->
+
+      <div class="pricing-card">
+
+        <h3>Basic</h3>
+
+        <div class="price">
+          ₹9K <span>/Room</span>
+        </div>
+
+        <p>
+          Perfect for small room redesigns and modern styling upgrades.
+        </p>
+
+        <ul class="features">
+          <li>2D Room Layout</li>
+          <li>Furniture Suggestions</li>
+          <li>Color Consultation</li>
+          <li>Email Support</li>
+        </ul>
+
+        <a href="#" class="btn">Get Started</a>
+
+      </div>
+
+      <!-- PREMIUM -->
+
+      <div class="pricing-card popular">
+
+        <div class="tag">POPULAR</div>
+
+        <h3>Premium</h3>
+
+        <div class="price">
+          ₹25K <span>/Project</span>
+        </div>
+
+        <p>
+          Complete interior transformation with premium furniture and styling.
+        </p>
+
+        <ul class="features">
+          <li>3D Interior Design</li>
+          <li>Custom Furniture</li>
+          <li>Lighting Design</li>
+          <li>Priority Support</li>
+        </ul>
+
+        <a href="#" class="btn">Choose Plan</a>
+
+      </div>
+
+      <!-- LUXURY -->
+
+      <div class="pricing-card">
+
+        <h3>Luxury</h3>
+
+        <div class="price">
+          ₹55K <span>/Villa</span>
+        </div>
+
+        <p>
+          High-end luxury interiors with full customization and consultation.
+        </p>
+
+        <ul class="features">
+          <li>Luxury Space Planning</li>
+          <li>Full Home Styling</li>
+          <li>Premium Materials</li>
+          <li>Dedicated Designer</li>
+        </ul>
+
+        <a href="#" class="btn">Contact Us</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="process">
+
+    <div class="section-title">
+      <h2>How We Work</h2>
+      <p>Simple process for designing your dream interior.</p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-box">
+        <h3>01</h3>
+        <h4>Consultation</h4>
+        <p>
+          We understand your vision, style, and space requirements.
+        </p>
+      </div>
+
+      <div class="process-box">
+        <h3>02</h3>
+        <h4>Planning</h4>
+        <p>
+          Our designers create modern layouts and premium concepts.
+        </p>
+      </div>
+
+      <div class="process-box">
+        <h3>03</h3>
+        <h4>Execution</h4>
+        <p>
+          We transform your space into a luxurious masterpiece.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>Ready To Design Your Dream Home?</h2>
+
+    <p>
+      Let our creative interior experts build elegant and timeless spaces for you.
+    </p>
+
+    <a href="Book Consultation.html" class="btn">Book Consultation</a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Luxe Interior Studio. All Rights Reserved.
+  </footer>
+
+  <script>
+
+    // Scroll Reveal Animation
+
+    const cards = document.querySelectorAll('.pricing-card, .process-box');
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    cards.forEach(card=>{
+      card.style.opacity = "0";
+      card.style.transform = "translateY(50px)";
+      card.style.transition = "1s";
+      observer.observe(card);
+    });
+
+  </script>
+
+</body>
+</html>

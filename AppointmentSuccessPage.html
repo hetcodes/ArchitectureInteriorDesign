@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointment Booked</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      overflow: hidden;
+      padding: 20px;
+      color: white;
+    }
+
+    .success-container {
+      width: 100%;
+      max-width: 700px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 1.2s ease;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .circle {
+      width: 120px;
+      height: 120px;
+      background: white;
+      color: black;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      animation: pop 0.8s ease;
+    }
+
+    h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #cfcfcf;
+      line-height: 1.8;
+      font-size: 17px;
+      max-width: 550px;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.4s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .primary-btn {
+      background: white;
+      color: black;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+    }
+
+    .secondary-btn {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+    }
+
+    .secondary-btn:hover {
+      background: white;
+      color: black;
+    }
+
+    .glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+    }
+
+    .glow.one {
+      top: -100px;
+      left: -100px;
+    }
+
+    .glow.two {
+      bottom: -120px;
+      right: -120px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 38px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      .success-container {
+        padding: 45px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-container">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="circle">✓</div>
+
+    <h1>Appointment Confirmed!</h1>
+
+    <p>
+      Thank you for booking a consultation with our Interior Design team.
+      Your appointment has been successfully scheduled. We look forward to
+      creating a beautiful and inspiring space for you.
+    </p>
+
+    <div class="btn-group">
+      <a href="index.html" class="btn primary-btn">Back To Home</a>
+
+      <a href="OfficeDesign.html" class="btn secondary-btn">View Projects</a>
+    </div>
+
+  </div>
+
+  <script>
+    const container = document.querySelector('.success-container');
+
+    window.addEventListener('load', () => {
+      container.style.transform = 'scale(1)';
+      container.style.opacity = '1';
+    });
+  </script>
+
+</body>
+</html>

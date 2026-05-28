@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Interior Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      width: 100%;
+      height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-content {
+      animation: fadeUp 1.5s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 70px;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      color: #d2d2d2;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .team-section {
+      padding: 100px 10%;
+      background: #111111;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #bcbcbc;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+
+    .team-card {
+      background: #1a1a1a;
+      border-radius: 25px;
+      overflow: hidden;
+      transition: 0.4s ease;
+      border: 1px solid #2a2a2a;
+      position: relative;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .team-image {
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+    }
+
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .team-card:hover .team-image img {
+      transform: scale(1.08);
+    }
+
+    .team-info {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .team-info h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .team-info span {
+      color: #c7a26a;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .team-info p {
+      color: #bdbdbd;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #262626;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      background: white;
+      color: black;
+      transform: translateY(-5px);
+    }
+
+    .cta {
+      padding: 100px 10%;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    }
+
+    .cta h2 {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #bdbdbd;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1,
+      .section-title h2,
+      .cta h2 {
+        font-size: 40px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Meet Our Team</h1>
+
+      <p>
+        A passionate team of architects, interior designers, and creative minds
+        dedicated to building elegant and timeless spaces.
+      </p>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="section-title">
+      <h2>Creative Experts</h2>
+
+      <p>
+        Our talented professionals combine innovation, creativity, and modern
+        design concepts to deliver exceptional interior and architectural
+        experiences.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-image">
+          <img src="iamges/person-1.jpg" alt="CEO">
+        </div>
+
+        <div class="team-info">
+          <h3>HET SHAH</h3>
+          <span>CEO & Founder</span>
+
+          <p>
+            Leading innovative architecture and interior solutions with luxury
+            modern design expertise.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-image">
+          <img src="iamges/person-3.jpg" alt="Designer">
+        </div>
+
+        <div class="team-info">
+          <h3>NISHI SHAH</h3>
+          <span>Interior Designer</span>
+
+          <p>
+            Passionate about transforming ideas into visually stunning and
+            functional interior spaces.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-image">
+          <img src="iamges/person-2.jpg" alt="Architect">
+        </div>
+
+        <div class="team-info">
+          <h3>KHUSHI SHAH</h3>
+          <span>Senior Architect</span>
+
+          <p>
+            Designing innovative and sustainable structures with modern
+            architectural excellence.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Let’s Create Something Beautiful</h2>
+
+    <p>
+      Work with our experienced architecture and interior design team to bring
+      your dream space to life.
+    </p>
+
+    <button class="btn">Contact Our Team</button>
+  </section>
+
+  <script>
+    const cards = document.querySelectorAll('.team-card');
+
+    cards.forEach(card => {
+      card.addEventListener('mousemove', () => {
+        card.style.transform = 'translateY(-10px) scale(1.02)';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+  </script>
+
+</body>
+</html>

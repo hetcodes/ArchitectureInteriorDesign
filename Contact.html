@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Contact Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f8f5f0;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:60vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      animation:fadeUp 1.2s ease;
+    }
+
+    .hero h1{
+      color:white;
+      font-size:70px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      color:#ddd;
+      font-size:20px;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
+
+    /* CONTACT SECTION */
+
+    .contact{
+      padding:100px 10%;
+      display:flex;
+      gap:60px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .contact-info{
+      flex:1;
+      min-width:320px;
+      animation:slideLeft 1.2s ease;
+    }
+
+    .contact-info h2{
+      font-size:50px;
+      margin-bottom:25px;
+    }
+
+    .contact-info p{
+      color:#666;
+      line-height:1.9;
+      margin-bottom:35px;
+      font-size:17px;
+    }
+
+    .info-box{
+      margin-bottom:25px;
+      padding:25px;
+      background:white;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+      transition:0.4s;
+    }
+
+    .info-box:hover{
+      transform:translateY(-8px);
+    }
+
+    .info-box h3{
+      margin-bottom:10px;
+      color:#c8a97e;
+      font-size:24px;
+    }
+
+    .info-box span{
+      color:#555;
+      line-height:1.8;
+      display:block;
+    }
+
+    /* FORM */
+
+    .contact-form{
+      flex:1;
+      min-width:320px;
+      background:white;
+      padding:45px;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+      animation:slideRight 1.2s ease;
+    }
+
+    .contact-form h2{
+      font-size:42px;
+      margin-bottom:30px;
+    }
+
+    .input-box{
+      margin-bottom:25px;
+    }
+
+    .input-box input,
+    .input-box textarea{
+      width:100%;
+      padding:18px 20px;
+      border:none;
+      background:#f3f3f3;
+      border-radius:15px;
+      font-size:16px;
+      outline:none;
+      transition:0.4s;
+    }
+
+    .input-box input:focus,
+    .input-box textarea:focus{
+      background:#ececec;
+      transform:scale(1.01);
+    }
+
+    .input-box textarea{
+      resize:none;
+      height:160px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:16px 40px;
+      background:black;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      border:none;
+      cursor:pointer;
+      transition:0.4s;
+      font-size:16px;
+      font-weight:500;
+    }
+
+    .btn:hover{
+      background:#c8a97e;
+      color:black;
+      transform:translateY(-5px);
+    }
+
+    /* MAP */
+
+    .map{
+      width:100%;
+      padding:0 10% 100px;
+      animation:fadeUp 1.4s ease;
+    }
+
+    .map iframe{
+      width:100%;
+      height:450px;
+      border:none;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:120px 10%;
+      background:
+      linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      text-align:center;
+    }
+
+    .cta h2{
+      color:white;
+      font-size:58px;
+      margin-bottom:20px;
+      animation:fadeUp 1s ease;
+    }
+
+    .cta p{
+      color:#ddd;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:40px;
+      font-size:18px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:black;
+      color:#aaa;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(60px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes slideLeft{
+      from{
+        opacity:0;
+        transform:translateX(-80px);
+      }
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    @keyframes slideRight{
+      from{
+        opacity:0;
+        transform:translateX(80px);
+      }
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .contact-info h2,
+      .contact-form h2,
+      .cta h2{
+        font-size:35px;
+      }
+
+      .contact{
+        padding:70px 7%;
+      }
+
+      .contact-form{
+        padding:35px 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+
+      <p>
+        Let’s create elegant and luxurious interiors together.
+        Get in touch with our design experts today.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact">
+
+    <!-- LEFT -->
+
+    <div class="contact-info">
+
+      <h2>Get In Touch</h2>
+
+      <p>
+        We design premium homes, offices, and luxury interiors
+        that blend creativity with timeless elegance.
+      </p>
+
+      <div class="info-box">
+        <h3>Office Address</h3>
+        <span>Ahmedabad, Gujarat, India</span>
+      </div>
+
+      <div class="info-box">
+        <h3>Email Address</h3>
+        <span>luxestudio@gmail.com</span>
+      </div>
+
+      <div class="info-box">
+        <h3>Phone Number</h3>
+        <span>+91 98765 43210</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="contact-form">
+
+      <h2>Send Message</h2>
+
+      <form>
+
+        <div class="input-box">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+
+        <div class="input-box">
+          <input type="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="input-box">
+          <input type="text" placeholder="Subject">
+        </div>
+
+        <div class="input-box">
+          <textarea placeholder="Write Your Message"></textarea>
+        </div>
+
+        <a href="AppointmentSuccessPage.html" class="btn2">Send Message</a>
+
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- MAP -->
+
+  <section class="map">
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117490.61524055479!2d72.49787815737808!3d23.020497771809956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f5f5b4f4e1%3A0x68d5c4c2f9f6f93!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1716727392000!5m2!1sen!2sin">
+    </iframe>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>Ready To Design Your Dream Interior?</h2>
+
+    <p>
+      Our creative team is here to transform your vision
+      into a stunning luxury space.
+    </p>
+
+    <a href="Book Consultation.html" class="btn">Book Consultation</a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Luxe Interior Studio. All Rights Reserved.
+  </footer>
+
+  <script>
+
+    // Scroll Reveal Animation
+
+    const boxes = document.querySelectorAll('.info-box, .contact-form, .map');
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    });
+
+    boxes.forEach(box=>{
+      box.style.opacity = "0";
+      box.style.transform = "translateY(50px)";
+      box.style.transition = "1s";
+      observer.observe(box);
+    });
+
+  </script>
+
+</body>
+</html>
